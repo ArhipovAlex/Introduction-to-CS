@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooter", "Shooter\Shooter.csproj", "{27A4B3CA-F5BE-46A4-B13F-76180AF9D721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A4B3CA-F5BE-46A4-B13F-76180AF9D721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A4B3CA-F5BE-46A4-B13F-76180AF9D721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A4B3CA-F5BE-46A4-B13F-76180AF9D721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A4B3CA-F5BE-46A4-B13F-76180AF9D721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
