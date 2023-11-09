@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduction", "Introductio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{8D0844DF-F85A-4405-AF21-E2D96F9AB950}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{211C950D-E8EA-4978-A0BD-F2D8A75C7EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8D0844DF-F85A-4405-AF21-E2D96F9AB950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D0844DF-F85A-4405-AF21-E2D96F9AB950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D0844DF-F85A-4405-AF21-E2D96F9AB950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211C950D-E8EA-4978-A0BD-F2D8A75C7EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211C950D-E8EA-4978-A0BD-F2D8A75C7EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211C950D-E8EA-4978-A0BD-F2D8A75C7EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211C950D-E8EA-4978-A0BD-F2D8A75C7EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB1D459-5CDC-4722-AFD1-4607C9F192D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
