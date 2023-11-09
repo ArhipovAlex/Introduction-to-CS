@@ -88,7 +88,7 @@ namespace Arrays
                 new int[] {13,21 },
                 new int[] {34,55,89}
             };
-            for(int i=0;i<arr.Length;i++) 
+            for(int i = 0; i < arr.Length; i++) 
             {
                 for(int j = 0; j < arr[i].Length; j++)
                 {
