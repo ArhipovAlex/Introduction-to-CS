@@ -3,6 +3,7 @@
 #define JAGGED_ARRAYS
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -96,6 +97,24 @@ namespace Arrays
                 }
                 Console.WriteLine();
             }
+            int sum = 0;
+            int count = 0;
+            int min = arr[0][0];
+            int max = arr[0][0];
+            for(int i = 0; i < arr.Length; i++) 
+            {
+                for(int j = 0; j < arr[i].Length; j++)
+                {
+                    sum+=arr[i][j];
+                    count++;
+                    if (min > arr[i][j]) min= arr[i][j];
+                    if (max < arr[i][j]) max= arr[i][j];
+                }
+            }
+            Console.WriteLine($"Сумма элементов массива {sum}");
+            Console.WriteLine($"Среднее арифетическое элементов массива {sum / count}");
+            Console.WriteLine($"Максимальный элемент массива {max}");
+            Console.WriteLine($"Минимальный элемент массива {min}");
 #endif //#JAGGED_ARRAYS
         }
     }
