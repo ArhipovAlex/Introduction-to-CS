@@ -11,7 +11,36 @@ namespace Calculator
         static void Main(string[] args)
         {
             //Console.WriteLine("Введите математическое выражение: ");
-            string expression = "22+33 *4-5/2 +3";// Console.ReadLine();
+            string expression = "(11+(22+33)*4-5)/2 +3";// Console.ReadLine();
+            //Console.WriteLine(Calculate(expression));
+            Console.WriteLine(Explorer(expression));
+        }
+        private static string Explorer(string expression)
+        {
+            for(int i=0;i<expression.Length;i++)
+            {
+                if (expression[i]=='(')
+                {
+                    for (int j=i+1;j<expression.Length;j++)
+                    {
+                        if (expression[j] == '(')
+                        {
+                            string buffer = expression.Substring(j, expression.Length - j - 1);
+                            Console.WriteLine(buffer);
+                            Explorer(buffer);
+                        }
+                        if (expression[j]==')')
+                        {
+                            string buffer=expression.Substring(i+1,j-i-1);
+                            return buffer;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+        private static double Calculate(string expression)
+        {
             expression = expression.Replace(".", ",");//замена символа в строке на другой символ
             //Console.WriteLine(expression);
             String[] numbers = expression.Split('+', '*', '/', '-');
@@ -72,6 +101,7 @@ namespace Calculator
             foreach (double i in values) Console.Write(i+"\t");
             Console.WriteLine();
             foreach (String i in operations) Console.Write(i + "\t");
+            return values[0];
         }
     }
 }
