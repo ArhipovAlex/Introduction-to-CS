@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,33 +9,56 @@ namespace Calculator
 {
     internal class Program
     {
+        static string expression;
         static void Main(string[] args)
         {
             //Console.WriteLine("Введите математическое выражение: ");
-            string expression = "(11+(22+33)*4-5)/2 +3";// Console.ReadLine();
+            //expression = "(11+(22+33)*4-5)/2 +3";// Console.ReadLine();
+            expression = "(11 + (55+(22+33)/4-5)*2*3+3)*(3+2)";// Console.ReadLine();
             //Console.WriteLine(Calculate(expression));
             Console.WriteLine(Explorer(expression));
+            Console.WriteLine(expression = Calculate(expression).ToString());
         }
         private static string Explorer(string expression)
         {
-            for(int i=0;i<expression.Length;i++)
+            for (int i = 0; i < expression.Length; i++)
             {
-                if (expression[i]=='(')
+                if (expression[i] == '(')
                 {
-                    for (int j=i+1;j<expression.Length;j++)
+                    for (int j = i + 1; j < expression.Length; j++)
                     {
                         if (expression[j] == '(')
                         {
-                            string buffer = expression.Substring(j, expression.Length - j - 1);
+                            string buffer = expression.Substring(j + 1, expression.Length - j - 1);
                             Console.WriteLine(buffer);
                             Explorer(buffer);
                         }
-                        if (expression[j]==')')
+                        if (expression[j] == ')')
                         {
-                            string buffer=expression.Substring(i+1,j-i-1);
-                            return buffer;
+                            string buffer = expression.Substring(i + 1, j - i - 1);
+                            Console.WriteLine(buffer);
+                            if (!buffer.Contains('(') && !buffer.Contains(')'))
+                            {
+                                Console.WriteLine(Calculate(buffer));
+                                double result = Calculate(buffer);
+                                Program.expression = Program.expression.Replace($"({buffer})", result.ToString());
+                                Explorer(Program.expression);
+                            }
+                            //return buffer;
                         }
                     }
+                }
+                if (expression[i] == ')')
+                {
+                    string buffer = expression.Substring(0, i);
+                    Console.WriteLine(buffer);
+                    if (!buffer.Contains('(') && !buffer.Contains(')'))
+                    {
+                        Console.WriteLine(Calculate(buffer));
+                        double result = Calculate(buffer);
+                        Program.expression = Program.expression.Replace($"({buffer})", result.ToString());
+                    }
+                    Explorer(Program.expression);
                 }
             }
             return null;
@@ -77,9 +101,9 @@ namespace Calculator
                         i--;
                     }
                 }
-            } while(operations.Contains("*")||operations.Contains("/"));
-            do 
-            { 
+            } while (operations.Contains("*") || operations.Contains("/"));
+            do
+            {
                 for (int i = 0; i < operations.Length; i++)
                 {
                     if (operations[i] == "+") values[i] += values[i + 1];
@@ -96,9 +120,9 @@ namespace Calculator
                         i--;
                     }
                 }
-                if (operations[1] == null) operations[0] = null;
+                if (operations.Length > 1 && operations[1] == null) operations[0] = null;
             } while (operations.Contains("+") || operations.Contains("-"));
-            foreach (double i in values) Console.Write(i+"\t");
+            foreach (double i in values) Console.Write(i + "\t");
             Console.WriteLine();
             foreach (String i in operations) Console.Write(i + "\t");
             return values[0];
